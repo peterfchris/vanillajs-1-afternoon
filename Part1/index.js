@@ -1,4 +1,5 @@
-const board = []
+let board = []
+
 
 function play(clickedId) {
     const playerSpan = document.getElementById('player')
@@ -7,11 +8,11 @@ function play(clickedId) {
     if (playerSpan.innerText === 'X') {
         playerSpan.innerText = 'O'
         clickedElement.innerText = 'X'
-        board[clickId] = 'X'
+        board[clickedId] = 'X'
     } else {
         playerSpan.innerText = 'X'
         clickedElement.innerText = 'O'
-        board[clickId] = 'O'
+        board[clickedId] = 'O'
     }
 
     const topLeft = board[0]
@@ -56,14 +57,13 @@ function play(clickedId) {
         alert(`${topRight} is the winner!`)
     }
 
-    const boardFull = true
+    let boardFull = true
     for (i = 0; i < board.length; i++) {
         if (board[i] === undefined) {
             boardFull = false
         }
+    }
         if (boardFull === true) {
             alert("It is a cat's game. There is no winner.")
         }
-    }
-
 }
